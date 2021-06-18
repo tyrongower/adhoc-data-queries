@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFrameworks>net48;net5.0;net5.0-windows;netcoreapp3.1;netstandard2.0;netstandard2.1</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -11,9 +10,7 @@
         <RepositoryUrl>https://github.com/tyrongower/adhoc-data-queries</RepositoryUrl>
         <PackageTags>.net,database,sql</PackageTags>
     </PropertyGroup>
-
     <ItemGroup>
       <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
     </ItemGroup>
-
 </Project>
