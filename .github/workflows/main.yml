@@ -31,7 +31,7 @@ jobs:
         uses: rohith/publish-nuget@v2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: HappyLittleHelpers.AdhocDataQueries.csproj
+          PROJECT_FILE_PATH: /HappyLittleHelpers.AdhocDataQueries.csproj
 
           # NuGet package id, used for version detection & defaults to project name
           # PACKAGE_NAME: happy-little-helpers
@@ -40,7 +40,7 @@ jobs:
           # VERSION_FILE_PATH: Directory.Build.props
 
           # Regex pattern to extract version info in a capturing group
-          VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
+          # VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
 
           # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
           VERSION_STATIC: ${{ env.TAG }}
