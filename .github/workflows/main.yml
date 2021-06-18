@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Release Pipleline
 
 # Controls when the action will run.
 on:
@@ -56,3 +56,7 @@ jobs:
           asset_path: ./adhoc-data-queries${{ env.TAG }}.zip
           asset_name: adhoc-data-queries${{ env.TAG }}.zip
           asset_content_type: application/zip
+      - uses: actions/upload-artifact@v1
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/result.zip
