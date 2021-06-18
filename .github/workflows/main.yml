@@ -4,7 +4,9 @@ name: CI
 
 # Controls when the action will run.
 on:
-  # Allows you to run this workflow manually from the Actions tab
+  push:
+    branches:
+      - master
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -14,14 +16,10 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-  bump-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: SiqiLu/dotnet-bump-version@master
-      - with:
-          version_files: "**/*.csproj"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions@checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x'
+          include-prerelease: true
+      - run: dotnet build HappyLittleHelpers.AdhocDataQueries
