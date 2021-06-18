@@ -21,7 +21,7 @@ jobs:
           dotnet-version: '5.x.x' # SDK Version to use; x will use the latest version of the 3.1 channel
       - run: dotnet build HappyLittleHelpers.AdhocDataQueries.csproj
       - name: Get the tag name
-        run: echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+        run: echo "TAG=${GITHUB_REF/refs\/tags\v//}" >> $GITHUB_ENV
       - name: publish on version change
         id: publish_nuget
         uses: rohith/publish-nuget@v2
