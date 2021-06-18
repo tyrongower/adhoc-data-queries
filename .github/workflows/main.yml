@@ -11,7 +11,7 @@ on:
       # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build-project:
+  build-and-publish-project:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
@@ -20,19 +20,14 @@ jobs:
         with:
           dotnet-version: '5.x.x' # SDK Version to use; x will use the latest version of the 3.1 channel
       - run: dotnet build HappyLittleHelpers.AdhocDataQueries.csproj
-  publish-nuget:
-    needs: build-project
-    runs-on: ubuntu-latest
-    steps:
       - name: Get the tag name
         run: echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
-      - uses: actions/checkout@v2
       - name: publish on version change
         id: publish_nuget
         uses: rohith/publish-nuget@v2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          # PROJECT_FILE_PATH: /HappyLittleHelpers.AdhocDataQueries.csproj
+          PROJECT_FILE_PATH: /HappyLittleHelpers.AdhocDataQueries.csproj
 
           # NuGet package id, used for version detection & defaults to project name
           # PACKAGE_NAME: happy-little-helpers
