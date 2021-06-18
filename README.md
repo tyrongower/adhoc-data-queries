@@ -1,2 +1,1 @@
-# adhoc-data-queries
-.NET library to assist running ad hoc queries on databases and returning strongly types objects
+[![CI](https://github.com/tyrongower/adhoc-data-queries/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/tyrongower/adhoc-data-queries/actions/workflows/main.yml)
