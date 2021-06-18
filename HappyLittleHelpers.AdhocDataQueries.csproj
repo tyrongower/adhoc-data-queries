@@ -4,11 +4,13 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Happy Little Helpers for Adhoc Data Queries</Title>
         <Authors>Tyron Gower</Authors>
+        <PackageVersion>1.0.1</PackageVersion>
         <LangVersion>8</LangVersion>
         <Description>This allows you to query the database with adhoc queries returning strongly typed records</Description>
         <PackageProjectUrl>https://github.com/tyrongower/adhoc-data-queries</PackageProjectUrl>
         <RepositoryUrl>https://github.com/tyrongower/adhoc-data-queries</RepositoryUrl>
         <PackageTags>.net,database,sql</PackageTags>
+        <Version>1</Version>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
